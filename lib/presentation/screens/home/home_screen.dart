@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../config/menu/menu_items.dart';
 
@@ -44,7 +45,6 @@ class _CustomListTile extends StatelessWidget {
     final colors = Theme.of(context).colorScheme;
 
     return ListTile(
-      onTap: () {},
       leading: Icon(
         menuItem.icon,
         color: colors.primary,
@@ -55,6 +55,9 @@ class _CustomListTile extends StatelessWidget {
       ),
       title: Text(menuItem.title),
       subtitle: Text(menuItem.subTitle),
+      onTap: () {
+        context.push(menuItem.link);
+      },
     );
   }
 }
