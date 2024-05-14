@@ -7,6 +7,8 @@ void main() {
 }
 
 class MainApp extends StatelessWidget {
+  static const name = 'main_screen';
+
   const MainApp({super.key});
 
   @override
