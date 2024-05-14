@@ -23,22 +23,23 @@ class _ProgressView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
+    final colors = Theme.of(context).colorScheme;
+    return Center(
       child: Column(
         children: [
-          SizedBox(height: 20),
-          Text('Circular Progress Indicator'),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
+          const Text('Circular Progress Indicator'),
+          const SizedBox(height: 20),
           CircularProgressIndicator(
             strokeWidth: 2,
-            backgroundColor: Colors.black87,
-            color: Colors.amber,
+            backgroundColor: Colors.black12,
+            color: colors.outline,
             strokeCap: StrokeCap.butt,
           ),
-          SizedBox(height: 20),
-          Text('Circular Progress Controlled'),
-          SizedBox(height: 20),
-          _ControlledProgressIndicator(),
+          const SizedBox(height: 20),
+          const Text('Circular Progress Controlled'),
+          const SizedBox(height: 20),
+          const _ControlledProgressIndicator(),
         ],
       ),
     );
@@ -56,6 +57,7 @@ class _ControlledProgressIndicator extends StatelessWidget {
         }).takeWhile((value) => value < 100),
         builder: (context, snapshot) {
           final progressValue = snapshot.data ?? 0;
+          final colors = Theme.of(context).colorScheme;
 
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -65,8 +67,8 @@ class _ControlledProgressIndicator extends StatelessWidget {
                 CircularProgressIndicator(
                   value: progressValue,
                   strokeWidth: 2,
-                  backgroundColor: Colors.black87,
-                  color: Colors.amber,
+                  backgroundColor: Colors.black12,
+                  color: colors.outline,
                   strokeCap: StrokeCap.butt,
                 ),
                 const SizedBox(width: 20),
@@ -74,7 +76,7 @@ class _ControlledProgressIndicator extends StatelessWidget {
                     child: LinearProgressIndicator(
                   value: progressValue,
                   backgroundColor: Colors.black87,
-                  color: Colors.amber,
+                  color: colors.outlineVariant,
                 ))
               ],
             ),

@@ -32,4 +32,10 @@ const appMenuItems = <MenuItem>[
     link: '/progress',
     icon: Icons.restart_alt_outlined,
   ),
+  MenuItem(
+    title: 'Snackbar Pop Up',
+    subTitle: 'Indicador de Snackbar o Pop Up',
+    link: '/snackbar',
+    icon: Icons.remove_red_eye_outlined,
+  ),
 ];
