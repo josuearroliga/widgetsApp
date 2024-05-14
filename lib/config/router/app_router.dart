@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import 'package:widget_app/presentation/screens/animated/animated_screen.dart';
 import 'package:widget_app/presentation/screens/screens_exports.dart';
 
 //To implement go router you go to the main and add .router to the material app, then you add the "routerConfig" setting to this andyou selectappRouter.
@@ -29,6 +30,11 @@ final appRouter = GoRouter(
       path: '/snackbar',
       name: SnackBarScreen.name,
       builder: (context, state) => const SnackBarScreen(),
+    ),
+    GoRoute(
+      path: '/animated',
+      name: AnimatedScreen.name,
+      builder: (context, state) => const AnimatedScreen(),
     ),
   ],
 );
