@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:widget_app/presentation/widgets/app_drawer.dart';
 
 import '../../../config/menu/menu_items.dart';
 
@@ -13,6 +14,7 @@ class HomeScreen extends StatelessWidget {
         title: Text('App Title'),
       ),
       body: _HomeView(),
+      drawer: const SideMenu(),
     );
   }
 }

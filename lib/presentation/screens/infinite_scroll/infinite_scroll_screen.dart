@@ -50,11 +50,21 @@ class _InfiniteScrollScreenState extends State<InfiniteScrollScreen> {
     //Async setstate, needs flag for mounting.
     if (!isMounted) return;
     setState(() {});
+    moveScrollToBottom();
   }
 
   void addFiveImages() {
     final lastId = imagesIds.last;
     imagesIds.addAll([1, 2, 3, 4, 5].map((e) => lastId + e));
+  }
+
+//To move the images a little up to let the user know that there is data loaded at the bottom.
+  void moveScrollToBottom() {
+    if ((scrollController.position.pixels + 100) >=
+        scrollController.position.maxScrollExtent) return;
+
+    scrollController.animateTo(scrollController.position.pixels + 120,
+        duration: const Duration(milliseconds: 300), curve: Curves.decelerate);
   }
 
 //This void method is to add the onpull parameter to the pull to refresh widget.
