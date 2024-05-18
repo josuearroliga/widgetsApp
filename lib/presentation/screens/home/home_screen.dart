@@ -9,12 +9,15 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //We define a key to assign it to the scaffold who is the one that opens the side bar, this way we can pass the scaffold state to close the side bar.
+    final scaffoldState = GlobalKey<ScaffoldState>();
     return Scaffold(
+      key: scaffoldState,
       appBar: AppBar(
-        title: Text('App Title'),
+        title: const Text('Multi-function App'),
       ),
       body: _HomeView(),
-      drawer: const SideMenu(),
+      drawer: SideMenu(scaffoldState: scaffoldState),
     );
   }
 }
