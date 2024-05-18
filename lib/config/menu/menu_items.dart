@@ -56,4 +56,10 @@ const appMenuItems = <MenuItem>[
     link: '/app_tutorial',
     icon: Icons.accessibility_new_outlined,
   ),
+  MenuItem(
+    title: 'Listas Infinitas',
+    subTitle: 'Seccion de lista de imagenes infinitas',
+    link: '/infinite',
+    icon: Icons.list_outlined,
+  ),
 ];
