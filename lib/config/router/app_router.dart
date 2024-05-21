@@ -1,5 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:widget_app/presentation/screens/animated/animated_screen.dart';
+import 'package:widget_app/presentation/screens/counter/counter_screen.dart';
+import 'package:widget_app/presentation/screens/darkmode/dark_mode_screen.dart';
 import 'package:widget_app/presentation/screens/screens_exports.dart';
 
 //To implement go router you go to the main and add .router to the material app, then you add the "routerConfig" setting to this andyou selectappRouter.
@@ -50,6 +52,16 @@ final appRouter = GoRouter(
       path: '/infinite',
       name: InfiniteScrollScreen.name,
       builder: (context, state) => const InfiniteScrollScreen(),
+    ),
+    GoRoute(
+      path: '/counter_screen',
+      name: CounterScreen.name,
+      builder: (context, state) => const CounterScreen(),
+    ),
+    GoRoute(
+      path: '/dark_mode_enabler',
+      name: DarkModeScreen.name,
+      builder: (context, state) => const DarkModeScreen(),
     ),
   ],
 );

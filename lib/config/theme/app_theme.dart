@@ -18,6 +18,5 @@ class AppTheme {
 
 //Crete the method to get the theme data.
   ThemeData getTheme() => ThemeData(
-        colorSchemeSeed: colorList[selectedColor],
-      );
+      colorSchemeSeed: colorList[selectedColor], brightness: Brightness.light);
 }

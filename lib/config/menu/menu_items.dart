@@ -62,4 +62,16 @@ const appMenuItems = <MenuItem>[
     link: '/infinite',
     icon: Icons.list_outlined,
   ),
+  MenuItem(
+    title: 'Pantalla Riverpod',
+    subTitle: 'Prueba de manejador de estado Riverpod',
+    link: '/counter_screen',
+    icon: Icons.add,
+  ),
+  MenuItem(
+    title: 'Cambia el tema de la aplicacion.',
+    subTitle: 'Selecciona de una amplia variedad de temas.',
+    link: '/dark_mode_enabler',
+    icon: Icons.format_paint_outlined,
+  ),
 ];
