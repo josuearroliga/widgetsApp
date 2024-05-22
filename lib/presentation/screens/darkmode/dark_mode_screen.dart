@@ -8,7 +8,9 @@ class DarkModeScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, ref) {
-    final isDarkMode = ref.watch(isDarkModeEnabled);
+    //To checnge the darkmode state we need to check the main where we send the theme and color mode to the apptheme class.
+    final isDarkMode = ref.watch(themeNotifierProvider).darkModeEnabled;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Gestor de Temas'),
@@ -18,7 +20,8 @@ class DarkModeScreen extends ConsumerWidget {
                 ? const Icon(Icons.light_mode_outlined)
                 : const Icon(Icons.dark_mode_outlined),
             onPressed: () {
-              ref.read(isDarkModeEnabled.notifier).update((state) => !state);
+              /*  ref.read(isDarkModeEnabled.notifier).update((state) => !state); */
+              ref.read(themeNotifierProvider.notifier).toggleDarkMode();
               //print(darkModeEnabler);
             },
           )
@@ -35,7 +38,9 @@ class _ThemeSelector extends ConsumerWidget {
     //Riverpod Provider para tener acceso a la lista de colores creada en el provider.
     final colors = ref.watch(colorListProvider);
     //Provider para vigilar los cambios en el selectedColor.
-    final selectedColor = ref.watch(colorSelectedProvider);
+    // final selectedColor = ref.watch(colorSelectedProvider);
+    //Ref for the color selection now.
+    final selectedColor = ref.watch(themeNotifierProvider).selectedColor;
 
     return ListView.builder(
       itemCount: colors.length,
@@ -52,9 +57,10 @@ class _ThemeSelector extends ConsumerWidget {
           groupValue: selectedColor,
           onChanged: (value) {
             //Assigning the index value to the new state of the colorSelectedProvider.
-            ref
+            /* ref
                 .read(colorSelectedProvider.notifier)
-                .update((state) => state = index);
+                .update((state) => state = index); */
+            ref.read(themeNotifierProvider.notifier).toggleColor(index);
           },
         );
       },
