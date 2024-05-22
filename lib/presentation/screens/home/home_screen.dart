@@ -14,7 +14,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       key: scaffoldState,
       appBar: AppBar(
-        title: const Text('Multi-function App'),
+        title: const Text('Multi-function App by Josh'),
       ),
       body: _HomeView(),
       drawer: SideMenu(scaffoldState: scaffoldState),
